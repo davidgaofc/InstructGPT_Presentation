@@ -34,24 +34,9 @@ Architecture
 ---
 
 
----
 
-### Key Changes
-- `D_demos`: Dataset of human demonstrations
-- `π_SL`: Supervised learning policy
-- `D_comps`: Dataset of human comparisons
-- `R(x, y)`: Learned reward model
-- `π_PPO`: Final PPO policy
 
----
-
-### Key Changes
-- \(D_{\text{demos}}\): Dataset of human demonstrations
-- \(\pi_{\text{SL}}\): Supervised learning policy
-- \(D_{\text{comps}}\): Dataset of human comparisons
-- \(R(x, y)\): Learned reward model
-- \(\pi_{\text{PPO}}\): Final PPO policy
-
+___
 Results
 ---
 
