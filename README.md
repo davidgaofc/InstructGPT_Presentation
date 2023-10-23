@@ -3,13 +3,13 @@
 #### a paper by Long Ouyang, Jeff Wu, Xu Jiang, Diogo Almeida, Carroll L. Wainwright, Pamela Mishkin, Paul Christiano, Jan Leike, Ryan Lowe, and the OpenAI Alignment team
 ___
 ## Table of Contents
-|Section| Description                  |
-|:---|:-----------------------------|
-|[Introduction](#introduction)| Motivation and Goal of the Paper |
-|[Approach](#approach)| How the Authors Achieved Their Goal|
-|[Critical Analysis](#critical-analysis)| Strengths and Weaknesses of the Paper|
-|[Discussion Questions](#discussion-questions)| Questions to Consider for Discussion|
-|[Other Resources](#other-resources)| Related Papers, Links, Videos|
+|Section| Description                          |
+|:---|:-------------------------------------|
+|[Introduction](#introduction)| Motivation and Goal of the Paper     |
+|[Approach](#approach)| How the Authors Achieved Their Goal  |
+|[Critical Analysis](#critical-analysis)| Analysis of the Paper                |
+|[Discussion Questions](#discussion-questions)| Questions to Consider for Discussion |
+|[Other Resources](#other-resources)| Related Papers, Links, Videos        |
 
 
 ___
@@ -26,12 +26,18 @@ ___
 
 Approach
 ---
-![InstructGPT](miscellaneous_files/diagram.png)
+![InstructGPT](images/diagram.png)
 
-___
+### Reward Model
+The main part of RLHF starts with the second step in the diagram above. The authors use a reward model to evaluate the model's behavior. The reward model is trained to predict whether a model's behavior is helpful, honest, and harmless and is based off hired human labelers.
 
-Architecture
----
+Labelers are given responses to a corresponding prompt and asked to rank them.
+This creates the following loss function for the reward model, which is pretty much a pairwise comparison of the responses:
+![Reward Model Loss Function](images/reward_loss.png)
+
+### 
+
+
 
 
 
@@ -44,13 +50,14 @@ Results
 ___
 Critical Analysis
 ---
-
+- blah
+- blah
 
 ___
 Discussion Questions
 ---
-
-
+### Question 1:
+### Question 2:
 
 Other Resources
 ---
