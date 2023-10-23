@@ -102,6 +102,12 @@ Discussion Questions
 ### Question 1: Explore the ethical implications of using human feedback in the training process. What are the potential risks and benefits?
 ### Question 2: How can we try to ensure that models are aligned correctly to a population with RLHF?
 
+___
+InstructGPT Code Demo
+---
+[InstructGPT Jupyter Notebook](https://github.com/davidgaofc/InstructGPT_Presentation/blob/main/instructgpt_api_example.ipynb)
+
+___
 Other Resources
 ---
 - [Play around with InstructGPT in the OpenAI Playground*](https://platform.openai.com/playground?mode=complete)
