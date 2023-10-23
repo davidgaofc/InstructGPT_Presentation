@@ -27,20 +27,48 @@ ___
 Approach
 ---
 ![InstructGPT](images/diagram.png)
+### High Level - Step by Step
+1. The model is pretrained on a large dataset of text (This is what we have with GPT-3).
+2. The model is fine-tuned on a dataset of instructions and completions. (Bootstrapping Step)
+3. Create Reward Model:
+    - For a subset of instructions, generate multiple completions using the fine-tuned model and have humans rank them.
+    - Train the reward model to predict the quality of completions.
+4. Use Reinforcement Learning to update the model using PPO (Proximal Policy Optimization).
+    - Sample a batch of instruction, completion pairs.
+    - Use the reward model to assign rewards to the completions.
+    - Optimize the model's parameters to maximize the expected reward.
+5. Repeat steps 3 and 4 until you are happy with results.
+6. Deploy the model!
+
 
 ### Reward Model
 The main part of RLHF starts with the second step in the diagram above. The authors use a reward model to evaluate the model's behavior. The reward model is trained to predict whether a model's behavior is helpful, honest, and harmless and is based off hired human labelers.
 
 Labelers are given responses to a corresponding prompt and asked to rank them.
-This creates the following loss function for the reward model, which is pretty much a pairwise comparison of the responses:
+This creates the following loss function for the reward model:
 ![Reward Model Loss Function](images/reward_loss.png)
 
-### 
+| Term       | Definition |
+|------------|------------|
+| `r_θ(x,y)` | The scalar output of the reward model for prompt `x` and completion `y` with parameters `θ`. |
+| `y_w`      | The preferred completion out of the pair of `y_w` and `y_l`. |
+| `D`        | The dataset of human comparisons. |
 
+By using this loss function, the reward model is trained to predict which of two completions is more helpful, honest, and harmless. The reward model is then used to evaluate the model's behavior.
 
+### Reinforcement Learning
+Now that we have defined the reward model, we can do reinforcement learning to train the model to follow instructions. The model is trained to maximize the expected reward of the reward model. This is done by using the reward model to evaluate the model's behavior and then using the reward to update the model's parameters.
+The reinforcement learning is done through the following objective function.
 
+![Objective Function](images/objective_function.png)
 
-
+| Term         | Definition                                                                                                        |
+|--------------|------------------------------------------------------------------------------------------------------------------|
+| `πRL`        | The learned RL (Reinforcement Learning) policy.                                                                   |
+| `πSFT`       | The supervised trained model.                                                                                     |
+| `D_pretrain` | The pretraining distribution.                                                                                     |
+| `β` (beta)   | The KL (Kullback-Leibler) reward coefficient, controlling the strength of the KL penalty.                         |
+| `γ` (gamma)  | The pretraining loss coefficient, controlling the strength of the pretraining gradients.                         |
 
 ___
 Results
