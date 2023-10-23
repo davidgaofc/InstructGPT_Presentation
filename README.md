@@ -6,6 +6,9 @@ ___
 |Section| Description                  |
 |:---|:-----------------------------|
 |[Introduction](#introduction)| Motivation and Goal of the Paper |
+|[Approach](#approach)| How the Authors Achieved Their Goal|
+|[Critical Analysis](#critical-analysis)| Strengths and Weaknesses of the Paper|
+|[Discussion Questions](#discussion-questions)| Questions to Consider for Discussion|
 |[Other Resources](#other-resources)| Related Papers, Links, Videos|
 
 
@@ -23,7 +26,12 @@ ___
 
 Approach
 ---
-![InstructGPT](diagram.png)
+![InstructGPT](miscellaneous_files/diagram.png)
+
+___
+
+Architecture
+---
 
 
 ___
