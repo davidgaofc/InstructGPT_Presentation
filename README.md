@@ -32,39 +32,16 @@ ___
 
 Architecture
 ---
-#### Pseudocode
 
-###### Step 1: Collect Dataset of Human Demonstrations
-Collect dataset of human demonstrations \(D_{\text{demos}}\).
 
-##### Step 2: Initialize Supervised Policy
-Initialize supervised policy \(\pi_{\text{SL}}\) by fine-tuning a language model on \(D_{\text{demos}}\).
+---
 
-##### Step 3: Collect Dataset of Human Comparisons
-Collect dataset of human comparisons \(D_{\text{comps}}\) between model outputs.
-
-##### Step 4: Train Reward Model
-Train the reward model \(R(x, y)\) on \(D_{\text{comps}}\).
-
-##### Step 5: Initialize PPO Policy
-Initialize the PPO policy \(\pi_{\text{PPO}}\) from \(\pi_{\text{SL}}\).
-
-##### Step 6: Initialize Value Function
-Initialize the value function \(V(x)\) from \(R(x, y)\).
-
-##### Step 7: PPO Iterations
-For each PPO iteration:
-1. Sample prompts \(x \sim D\).
-2. Generate outputs \(y \sim \pi_{\text{PPO}}(x)\).
-3. Calculate rewards \(r = R(x, y)\).
-4. Compute the loss:
-   \[
-   L = \sum_t \gamma^t R(x_t, y_t) - \text{KL}[\pi_{\text{PPO}}(y_t | x_t) || \pi_{\text{SL}}(y_t | x_t)]
-   \]
-5. Update \(\pi_{\text{PPO}}\) with \(\nabla L\).
-
-## Step 8: Deploy Final Policy
-Deploy \(\pi_{\text{PPO}}\) as the final policy.
+### Key Changes
+- `D_demos`: Dataset of human demonstrations
+- `π_SL`: Supervised learning policy
+- `D_comps`: Dataset of human comparisons
+- `R(x, y)`: Learned reward model
+- `π_PPO`: Final PPO policy
 
 ---
 
