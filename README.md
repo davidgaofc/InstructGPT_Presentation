@@ -3,13 +3,13 @@
 #### a paper by Long Ouyang, Jeff Wu, Xu Jiang, Diogo Almeida, Carroll L. Wainwright, Pamela Mishkin, Paul Christiano, Jan Leike, Ryan Lowe, and the OpenAI Alignment team
 ___
 ## Table of Contents
-|Section| Description                          |
-|:---|:-------------------------------------|
-|[Introduction](#introduction)| Motivation and Goal of the Paper     |
-|[Approach](#approach)| How the Authors Achieved Their Goal  |
-|[Critical Analysis](#critical-analysis)| Analysis of the Paper                |
-|[Discussion Questions](#discussion-questions)| Questions to Consider for Discussion |
-|[Other Resources](#other-resources)| Related Papers, Links, Videos        |
+| Section                                       | Description                          |
+|:----------------------------------------------|:-------------------------------------|
+| [Introduction](#introduction)                 | Motivation and Goal of the Paper     |
+| [Approach](#approach)                         | How the Authors Achieved Their Goal  |
+| [Critical Analysis](#critical-analysis)       | Analysis of the Paper                |
+| [Discussion Questions](#discussion-questions) | Questions to Consider for Discussion |
+| [Other Resources](#other-resources)           | Related Papers, Links, Videos        |
 
 
 ___
@@ -28,7 +28,7 @@ Approach
 ---
 ![InstructGPT](images/diagram.png)
 ### High Level - Step by Step
-1. The model is pretrained on a large dataset of text (This is what we have with GPT-3).
+1. The model is pretrained on a large dataset of text. (This is what we have with GPT-3.)
 2. The model is fine-tuned on a dataset of instructions and completions. (Bootstrapping Step)
 3. Create Reward Model:
     - For a subset of instructions, generate multiple completions using the fine-tuned model and have humans rank them.
@@ -73,19 +73,31 @@ The reinforcement learning is done through the following objective function.
 ___
 Results
 ---
+The following diagrams from the paper show promising results from the evaluation of the model RLHF models (PPO, PPO-ptx) against other models.
 
+This one shows the pure performance of models across parameter sizes.
+![win_rate](images/winrate.png)
 
+This one shows the alignment focused evaluations of the models.
+![alignment](images/categoryeval.png)
 ___
-Critical Analysis
+Critical Analysis and Key Takeaways
 ---
-- blah
-- blah
+### Key Takeways
+- We can get excellent performance with less training data and less compute by using RLHF.
+- Models can still be generalizable if pretraining data is mixed into the reinforcement learning.
+- RLHF can be used to improve the alignment of models with human intentions.
+- We can have smaller models which perform better than larger models by using RLHF.
+
+### Critical Analysis
+- The alignment of a model depends on the preferences of the labeler population.
+- The results show that helpfulness gets better with RLHF, but safety is still mostly unexplored.
 
 ___
 Discussion Questions
 ---
-### Question 1:
-### Question 2:
+### Question 1: Explore the ethical implications of using human feedback in the training process. What are the potential risks and benefits?
+### Question 2: How can we try to ensure that models are aligned correctly to a population with RLHF?
 
 Other Resources
 ---
