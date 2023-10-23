@@ -26,8 +26,14 @@ Approach
 ![InstructGPT](diagram.png)
 
 
+___
+Critical Analysis
+---
 
 
+___
+Discussion Questions
+---
 
 
 
@@ -39,9 +45,9 @@ Other Resources
 - [OpenAI Paper Summary](https://openai.com/research/instruction-following#sample1)
 - [HuggingFace RLHF Blog Post](https://huggingface.co/blog/rlhf)
 - [For More on PPO - from OpenAI](https://openai.com/research/openai-baselines-ppo)
-- 
+- [For More on RLHF - from OpenAI](https://openai.com/research/learning-from-human-preferences)
 
-*Note: You need to make an OpenAI account to access the Playground. If you don't want to make an account, you can watch the video to see how InstructGPT works.
+*Note: You need to make an OpenAI account to access the Playground.
 ___
 Citation for this Paper:\
 Ouyang, L., Wu, J., Jiang, X., Almeida, D., Wainwright, C., Mishkin, P., ... & Lowe, R. (2022). _Training language models to follow instructions with human feedback_. Advances in Neural Information Processing Systems, 35, 27730-27744.
